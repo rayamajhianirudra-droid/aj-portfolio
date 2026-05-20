@@ -164,6 +164,9 @@ function App() {
           <motion.div variants={itemVariants} className="flex gap-4 flex-wrap">
             <a href="#projects" className="bg-[#6366F1] hover:bg-[#5558DD] text-white px-8 py-3 rounded-lg font-semibold transition">View Work</a>
             <a href="#contact" className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-lg font-semibold transition">Contact Me</a>
+            <a href="/AJ_Rayamajhi_Resume.pdf" download className="border border-[#6366F1]/50 hover:border-[#6366F1] text-[#6366F1] px-8 py-3 rounded-lg font-semibold transition">Download CV</a>
+            <a href="#projects" className="bg-[#6366F1] hover:bg-[#5558DD] text-white px-8 py-3 rounded-lg font-semibold transition">View Work</a>
+            <a href="#contact" className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-lg font-semibold transition">Contact Me</a>
           </motion.div>
         </motion.div>
       </section>
