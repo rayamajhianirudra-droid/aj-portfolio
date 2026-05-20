@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ajPhoto from './aj.jpg';
 import './App.css';
 
@@ -43,6 +43,7 @@ const itemVariants = {
 function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const typedText = useTypingEffect([
     'Full Stack Developer.',
@@ -72,6 +73,8 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = ['about', 'projects', 'experience', 'contact'];
+
   return (
     <div className="min-h-screen bg-[#080810] text-[#F1F5F9]">
       <div className="orb orb-1" />
@@ -81,6 +84,8 @@ function App() {
         className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#6366F1] to-[#A855F7] z-[100] transition-all duration-100"
         style={{ width: scrollProgress + '%' }}
       />
+
+      {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 px-8 py-5 flex justify-between items-center backdrop-blur-sm border-b border-white/5">
         <motion.span
           initial={{ opacity: 0, x: -20 }}
@@ -90,18 +95,61 @@ function App() {
         >
           AJ
         </motion.span>
+
+        {/* Desktop nav */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex gap-8 text-sm"
+          className="hidden md:flex gap-8 text-sm"
         >
-          <a href="#about" className={activeSection === 'about' ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}>about</a>
-          <a href="#projects" className={activeSection === 'projects' ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}>projects</a>
-          <a href="#experience" className={activeSection === 'experience' ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}>experience</a>
-          <a href="#contact" className={activeSection === 'contact' ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}>contact</a>
+          {navLinks.map((section) => (
+            
+              key={section}
+              href={"#" + section}
+              className={activeSection === section ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}
+            >
+              {section}
+            </a>
+          ))}
         </motion.div>
+
+        {/* Hamburger button */}
+        <button
+          className="md:hidden flex flex-col gap-1.5 z-50"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        </button>
       </nav>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-full h-screen bg-[#080810] z-40 flex flex-col justify-center items-center gap-10"
+          >
+            {navLinks.map((section) => (
+              
+                key={section}
+                href={"#" + section}
+                onClick={() => setMenuOpen(false)}
+                className="capitalize text-3xl font-bold text-white hover:text-[#6366F1] transition"
+              >
+                {section}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hero */}
       <section className="min-h-screen flex flex-col justify-center px-8 md:px-24 pt-20 relative z-10">
         <motion.div variants={containerVariants} initial="hidden" animate="visible">
           <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">
@@ -120,6 +168,8 @@ function App() {
           </motion.div>
         </motion.div>
       </section>
+
+      {/* About */}
       <section id="about" className="py-32 px-8 md:px-24 relative z-10">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col md:flex-row gap-16 items-center">
           <motion.div variants={itemVariants} className="w-full md:w-1/3">
@@ -145,6 +195,8 @@ function App() {
           </div>
         </motion.div>
       </section>
+
+      {/* Projects */}
       <section id="projects" className="py-32 px-8 md:px-24 relative z-10">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">My Work</motion.p>
@@ -172,6 +224,8 @@ function App() {
           </div>
         </motion.div>
       </section>
+
+      {/* Experience */}
       <section id="experience" className="py-32 px-8 md:px-24 relative z-10">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Background</motion.p>
@@ -195,6 +249,8 @@ function App() {
           </div>
         </motion.div>
       </section>
+
+      {/* Contact */}
       <section id="contact" className="py-32 px-8 md:px-24 relative z-10">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center max-w-2xl mx-auto">
           <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Get In Touch</motion.p>
@@ -211,6 +267,7 @@ function App() {
           </motion.div>
         </motion.div>
       </section>
+
       <footer className="py-8 px-8 border-t border-white/5 text-center text-gray-500 text-sm relative z-10">
         Built by AJ Rayamajhi — Inevitable.
       </footer>
