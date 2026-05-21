@@ -238,21 +238,23 @@ function App() {
               </motion.div>
               <motion.div variants={itemVariants} className="flex flex-col gap-4">
                 {[
-                  { flag: '🇳🇵', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
-                  { flag: '🇺🇸', country: 'Texas', label: '2021', desc: 'First steps in America.' },
-                  { flag: '🇺🇸', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
-                ].map((item) => (
-                  <div key={item.country} className="bg-[#0F1120] border border-white/5 rounded-2xl p-5 hover:border-[#6366F1]/30 transition flex items-center gap-5">
-                    <span className="text-3xl">{item.flag}</span>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-center">
-                        <span className="font-bold text-white">{item.country}</span>
-                        <span className="text-[#6366F1] text-xs font-semibold">{item.label}</span>
-                      </div>
-                      <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+  { code: 'NP', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
+  { code: 'US', country: 'Texas', label: '2021', desc: 'First steps in America.' },
+  { code: 'US', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
+].map((item) => (
+  <div key={item.country} className="bg-[#0F1120] rounded-2xl p-5 hover:border-[#6366F1]/40 transition flex items-center gap-5 border border-white/5 hover:shadow-lg hover:shadow-[#6366F1]/5" style={{ borderLeft: '3px solid #6366F1' }}>
+    <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center font-black text-sm text-[#6366F1] bg-[#6366F1]/10 border border-[#6366F1]/20 shadow-[0_0_12px_rgba(99,102,241,0.3)]">
+      {item.code}
+    </div>
+    <div className="flex-1">
+      <div className="flex justify-between items-center">
+        <span className="font-bold text-white">{item.country}</span>
+        <span className="text-[#6366F1] text-xs font-semibold">{item.label}</span>
+      </div>
+      <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
+    </div>
+  </div>
+))}
               </motion.div>
             </div>
           </motion.div>
