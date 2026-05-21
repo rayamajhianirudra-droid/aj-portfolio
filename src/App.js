@@ -334,6 +334,7 @@ function App() {
                   { role: 'Founder', company: 'Rastahh Clothing Brand', period: '2024 — 2025', desc: 'Founded and managed a startup clothing brand from branding to customer engagement.', side: 'right' },
                   { role: 'Investment Banking Analyst', company: 'Laxmi Sunrise Bank', period: '2022 — 2023', desc: 'Equity analysis and investment reports for senior analysts in Kathmandu.', side: 'left' },
                   { role: 'B.S. Computer Science', company: 'Southwest Minnesota State University', period: 'Expected May 2027', desc: 'GPA: 3.7. OOP (A), Computer Architecture (A), Data Science (A-).', side: 'right' },
+                  { role: 'Cambridge A Levels', company: 'Chelsea International Academy', period: '2018 — 2020', desc: 'Cambridge International Curriculum. Leadership and production work recognized in school activities.', side: 'left' },
                 ].map((item) => (
                   <motion.div key={item.role} variants={itemVariants} className={`md:w-5/12 ${item.side === 'right' ? 'md:ml-auto' : ''}`}>
                     <div className="bg-[#0F1120] border border-white/5 rounded-2xl p-6 hover:border-[#6366F1]/40 transition">
