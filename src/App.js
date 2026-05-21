@@ -239,7 +239,7 @@ function App() {
               <motion.div variants={itemVariants} className="flex flex-col gap-4">
                 {[
                   { flag: '🇳🇵', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
-                  { flag: '🇺🇸', country: 'Texas', label: '2023', desc: 'First steps in America.' },
+                  { flag: '🇺🇸', country: 'Texas', label: '2021', desc: 'First steps in America.' },
                   { flag: '🇺🇸', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
                 ].map((item) => (
                   <div key={item.country} className="bg-[#0F1120] border border-white/5 rounded-2xl p-5 hover:border-[#6366F1]/30 transition flex items-center gap-5">
