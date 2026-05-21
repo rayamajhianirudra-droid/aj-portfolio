@@ -171,24 +171,25 @@ function App() {
         )}
       </AnimatePresence>
 
-      <section className="min-h-screen flex items-center px-8 md:px-24 pt-20 relative z-10">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-between w-full gap-16">
+      {/* HERO */}
+      <section className="min-h-screen flex items-center px-8 md:px-24 pt-24 pb-8 relative z-10">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-between w-full gap-12">
           <div className="flex-1">
             <motion.div variants={itemVariants} className="badge">
               <span className="badge-dot" />
               CO-FOUNDER OF CODYZA
             </motion.div>
-            <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl font-black leading-none mb-4">
+            <motion.h1 variants={itemVariants} className="text-6xl md:text-7xl font-black leading-none mb-4">
               Anirudra<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Rayamajhi</span>
             </motion.h1>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-lg font-semibold mb-4 h-7">
               {typedText}<span className="animate-pulse">|</span>
             </motion.p>
-            <motion.p variants={itemVariants} className="text-gray-400 text-lg max-w-lg mb-8 leading-relaxed">
+            <motion.p variants={itemVariants} className="text-gray-400 text-lg max-w-lg mb-6 leading-relaxed">
               Building real products that solve real problems. Nepal to Texas to Minnesota — always moving, always building.
             </motion.p>
-            <motion.div variants={itemVariants} className="flex gap-6 mb-10">
+            <motion.div variants={itemVariants} className="flex gap-6 mb-8">
               {[{ value: '3+', label: 'Projects' }, { value: '3.7', label: 'GPA' }, { value: '2+', label: 'Companies' }].map((s) => (
                 <div key={s.label}>
                   <div className="text-3xl font-black text-white">{s.value}</div>
@@ -201,7 +202,7 @@ function App() {
               <a href="#contact" className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-lg font-semibold transition">Contact Me</a>
               <a href="/AJ_Rayamajhi_Resume.pdf" download className="border border-[#6366F1]/50 hover:border-[#6366F1] text-[#6366F1] px-8 py-3 rounded-lg font-semibold transition">Download CV</a>
             </motion.div>
-            <motion.div variants={itemVariants} className="mt-16 scroll-indicator">
+            <motion.div variants={itemVariants} className="mt-12 scroll-indicator">
               <div className="scroll-line" />
               <span>scroll</span>
             </motion.div>
@@ -217,12 +218,13 @@ function App() {
         </motion.div>
       </section>
 
-      <section id="about" className="py-32 px-8 md:px-24 relative z-10">
+      {/* ABOUT */}
+      <section id="about" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">01</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">About Me</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black mb-12">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
               The Story<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Behind the Builder.</span>
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -257,12 +259,13 @@ function App() {
         </div>
       </section>
 
-      <section id="skills" className="py-32 px-8 md:px-24 relative z-10">
+      {/* SKILLS */}
+      <section id="skills" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">02</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Technical Skills</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black mb-12">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
               What I<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Work With.</span>
             </motion.h2>
             <motion.div variants={itemVariants} className="bento-grid">
@@ -284,12 +287,13 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="py-32 px-8 md:px-24 relative z-10">
+      {/* PROJECTS */}
+      <section id="projects" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">03</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">My Work</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black mb-12">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
               Featured<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Projects.</span>
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -318,12 +322,13 @@ function App() {
         </div>
       </section>
 
-      <section id="experience" className="py-32 px-8 md:px-24 relative z-10">
+      {/* EXPERIENCE */}
+      <section id="experience" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">04</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Background</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black mb-16">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-14">
               Experience &<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Education.</span>
             </motion.h2>
             <div className="relative">
@@ -353,12 +358,13 @@ function App() {
         </div>
       </section>
 
-      <section id="achievements" className="py-32 px-8 md:px-24 relative z-10">
+      {/* ACHIEVEMENTS */}
+      <section id="achievements" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">05</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Highlights</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black mb-12">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
               Beyond<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">The Code.</span>
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -377,12 +383,13 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className="py-32 px-8 md:px-24 relative z-10">
+      {/* CONTACT */}
+      <section id="contact" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">06</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Get In Touch</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black mb-12">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
               Let's Build Something<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Inevitable.</span>
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">

@@ -99,27 +99,25 @@ body {
 
 .photo-wrapper {
   position: relative;
-  width: 320px;
+  width: 260px;
   height: 320px;
 }
 
 .photo-ring {
   position: absolute;
-  inset: -8px;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  background: linear-gradient(135deg, #6366F1, #A855F7, #6366F1);
-  animation: morphing 8s ease-in-out infinite;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6366F1, #A855F7);
   z-index: 0;
 }
 
 .photo-inner {
   position: absolute;
-  inset: 4px;
-  border-radius: 28% 68% 68% 28% / 28% 28% 68% 68%;
+  inset: 2px;
+  border-radius: 18px;
   overflow: hidden;
   background: #0F1120;
   z-index: 1;
-  animation: morphing 8s ease-in-out infinite;
 }
 
 .photo-inner img {
@@ -127,13 +125,6 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: top;
-}
-
-@keyframes morphing {
-  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
 }
 
 .social-sidebar {
@@ -323,6 +314,6 @@ body {
   .social-sidebar { display: none; }
   .bento-grid { grid-template-columns: 1fr; }
   .bento-card.large { grid-column: span 1; }
-  .photo-wrapper { width: 240px; height: 240px; }
+  .photo-wrapper { width: 200px; height: 240px; }
   .section-number { display: none; }
 }
