@@ -75,16 +75,6 @@ function App() {
 
   const navLinks = ['about', 'projects', 'experience', 'contact'];
 
-  const NavLink = ({ section }) => (
-    <a
-      href={"#" + section}
-      onClick={() => setMenuOpen(false)}
-      className={activeSection === section ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}
-    >
-      {section}
-    </a>
-  );
-
   return (
     <div className="min-h-screen bg-[#080810] text-[#F1F5F9]">
       <div className="orb orb-1" />
@@ -104,7 +94,6 @@ function App() {
         >
           AJ
         </motion.span>
-
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -112,10 +101,15 @@ function App() {
           className="hidden md:flex gap-8 text-sm"
         >
           {navLinks.map((section) => (
-            <NavLink key={section} section={section} />
+            
+              key={section}
+              href={"#" + section}
+              className={activeSection === section ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}
+            >
+              {section}
+            </a>
           ))}
         </motion.div>
-
         <button
           className="md:hidden flex flex-col gap-1.5 z-50 relative"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -136,7 +130,7 @@ function App() {
             className="fixed top-0 left-0 w-full h-screen bg-[#080810] z-40 flex flex-col justify-center items-center gap-10"
           >
             {navLinks.map((section) => (
-              <a
+              
                 key={section}
                 href={"#" + section}
                 onClick={() => setMenuOpen(false)}
@@ -164,6 +158,7 @@ function App() {
           <motion.div variants={itemVariants} className="flex gap-4 flex-wrap">
             <a href="#projects" className="bg-[#6366F1] hover:bg-[#5558DD] text-white px-8 py-3 rounded-lg font-semibold transition">View Work</a>
             <a href="#contact" className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-lg font-semibold transition">Contact Me</a>
+            <a href="/AJ_Rayamajhi_Resume.pdf" download className="border border-[#6366F1]/50 hover:border-[#6366F1] text-[#6366F1] px-8 py-3 rounded-lg font-semibold transition">Download CV</a>
           </motion.div>
         </motion.div>
       </section>
@@ -180,10 +175,10 @@ function App() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Always Building.</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-400 text-lg leading-relaxed mb-6">
-              I'm AJ — a Computer Science student at SMSU with a 3.7 GPA, full stack developer, and co-founder of Codyza. I've worked in investment banking in Kathmandu, built AI-powered health platforms, and founded a clothing brand — all before graduation.
+              I am AJ, a Computer Science student at SMSU with a 3.7 GPA, full stack developer, and co-founder of Codyza. I have worked in investment banking in Kathmandu, built AI-powered health platforms, and founded a clothing brand, all before graduation.
             </motion.p>
             <motion.p variants={itemVariants} className="text-gray-400 text-lg leading-relaxed mb-8">
-              I speak English, Nepali, and basic Spanish. I play chess, basketball, and pool. I lift with a structured plan and explore every city I land in. I'm not here to be average.
+              I speak English, Nepali, and basic Spanish. I play chess, basketball, and pool. I lift with a structured plan and explore every city I land in. I am not here to be average.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
               {['Java', 'Python', 'React', 'Spring Boot', 'PostgreSQL', 'Gemini AI', 'Git'].map((skill) => (
@@ -200,7 +195,7 @@ function App() {
           <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-16">Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Projects</span></motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { tag: 'Full Stack · AI', title: 'LifeOS Health', desc: 'AI-powered nutrition platform with Spring Boot REST API, React frontend, and PostgreSQL. Integrates USDA FoodData for 600,000+ foods and Google Gemini AI for personalized health insights.', tags: ['Spring Boot', 'React', 'PostgreSQL', 'Gemini AI', 'USDA API'], link: 'https://github.com/rayamajhianirudra-droid/lifeos-fullstack', linkText: 'GitHub' },
+              { tag: 'Full Stack AI', title: 'LifeOS Health', desc: 'AI-powered nutrition platform with Spring Boot REST API, React frontend, and PostgreSQL. Integrates USDA FoodData for 600,000 plus foods and Google Gemini AI for personalized health insights.', tags: ['Spring Boot', 'React', 'PostgreSQL', 'Gemini AI', 'USDA API'], link: 'https://github.com/rayamajhianirudra-droid/lifeos-fullstack', linkText: 'GitHub' },
               { tag: 'Desktop App', title: 'US Tax Calculator', desc: 'Desktop application for calculating US federal and state taxes with real-time bracket computation, deduction analysis, and clean visual breakdowns.', tags: ['Java', 'JavaFX', 'OOP'], link: 'https://github.com/rayamajhianirudra-droid', linkText: 'GitHub' },
               { tag: 'Co-Founder', title: 'Codyza', desc: 'Co-founded a web development agency delivering custom websites and digital solutions for clients. Built and shipped real products for real businesses.', tags: ['React', 'Web Dev', 'Entrepreneurship'], link: 'https://codyza.com', linkText: 'Live' },
             ].map((project) => (
@@ -229,8 +224,8 @@ function App() {
           <div className="flex flex-col gap-6">
             {[
               { role: 'Co-Founder', company: 'Codyza', period: '2024 - Present', desc: 'Building a web development agency delivering custom websites and digital solutions.' },
-              { role: 'Founder', company: 'Rastahh Clothing Brand', period: '2024 - 2025', desc: 'Founded and managed a startup clothing brand — branding, product development, and customer engagement.' },
-              { role: 'Investment Banking Analyst', company: 'Laxmi Sunrise Bank', period: '2022 - 2023', desc: 'Performed fundamental and technical analysis of equities; prepared investment reports for senior analysts.' },
+              { role: 'Founder', company: 'Rastahh Clothing Brand', period: '2024 - 2025', desc: 'Founded and managed a startup clothing brand, branding, product development, and customer engagement.' },
+              { role: 'Investment Banking Analyst', company: 'Laxmi Sunrise Bank', period: '2022 - 2023', desc: 'Performed fundamental and technical analysis of equities and prepared investment reports for senior analysts.' },
               { role: 'B.S. Computer Science', company: 'Southwest Minnesota State University', period: 'Expected May 2027', desc: 'GPA: 3.7 CS Core. Relevant coursework: OOP (A), Computer Architecture (A), Data Science (A-).' },
             ].map((item) => (
               <motion.div key={item.role} variants={itemVariants} className="bg-[#0F1120] border border-white/5 rounded-2xl p-8 hover:border-[#6366F1]/50 transition">
