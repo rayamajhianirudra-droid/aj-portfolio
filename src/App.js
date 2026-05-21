@@ -44,6 +44,7 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
   const typedText = useTypingEffect([
     'Full Stack Developer.',
@@ -69,14 +70,20 @@ function App() {
         }
       }
     };
+    const handleMouseMove = (e) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   const navLinks = ['about', 'projects', 'experience', 'contact'];
 
   return (
     <div className="min-h-screen bg-[#080810] text-[#F1F5F9]">
+      <div className="cursor-glow" style={{ left: cursor.x, top: cursor.y }} />
       <div className="orb orb-1" />
       <div className="orb orb-2" />
       <div className="orb orb-3" />
@@ -155,6 +162,18 @@ function App() {
           <motion.p variants={itemVariants} className="text-gray-400 text-xl max-w-xl mb-10 leading-relaxed">
             Building real products that solve real problems. Full stack engineer, entrepreneur, and relentless builder.
           </motion.p>
+          <motion.div variants={itemVariants} className="flex gap-8 mb-10">
+            {[
+              { value: '3+', label: 'Projects Built' },
+              { value: '3.7', label: 'GPA' },
+              { value: '2+', label: 'Companies' },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div className="text-3xl font-black text-white">{stat.value}</div>
+                <div className="text-gray-500 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
           <motion.div variants={itemVariants} className="flex gap-4 flex-wrap">
             <a href="#projects" className="bg-[#6366F1] hover:bg-[#5558DD] text-white px-8 py-3 rounded-lg font-semibold transition">View Work</a>
             <a href="#contact" className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-lg font-semibold transition">Contact Me</a>

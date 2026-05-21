@@ -15,7 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Gradient Orbs */
 .orb {
   position: fixed;
   border-radius: 50%;
@@ -60,4 +59,16 @@ body {
   25% { transform: translateY(-30px) translateX(20px); }
   50% { transform: translateY(-15px) translateX(-20px); }
   75% { transform: translateY(20px) translateX(15px); }
+}
+
+.cursor-glow {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(99,102,241,0.12), transparent 70%);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
 }
