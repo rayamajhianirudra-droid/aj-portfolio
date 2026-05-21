@@ -101,7 +101,7 @@ function App() {
           className="hidden md:flex gap-8 text-sm"
         >
           {navLinks.map((section) => (
-            
+            <a
               key={section}
               href={"#" + section}
               className={activeSection === section ? 'capitalize transition text-white font-semibold' : 'capitalize transition text-gray-400 hover:text-white'}
@@ -130,7 +130,7 @@ function App() {
             className="fixed top-0 left-0 w-full h-screen bg-[#080810] z-40 flex flex-col justify-center items-center gap-10"
           >
             {navLinks.map((section) => (
-              
+              <a
                 key={section}
                 href={"#" + section}
                 onClick={() => setMenuOpen(false)}
