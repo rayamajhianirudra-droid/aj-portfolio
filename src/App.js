@@ -172,8 +172,8 @@ function App() {
       </AnimatePresence>
 
       {/* HERO */}
-      <section className="min-h-screen flex items-center px-8 md:px-24 pt-24 pb-8 relative z-10">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-between w-full gap-12">
+      <section className="min-h-screen flex items-start px-8 md:px-24 pt-32 pb-8 relative z-10">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col md:flex-row items-start justify-between w-full gap-12">
           <div className="flex-1">
             <motion.div variants={itemVariants} className="badge">
               <span className="badge-dot" />

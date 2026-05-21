@@ -101,14 +101,42 @@ body {
   position: relative;
   width: 260px;
   height: 320px;
+  align-self: flex-start;
+  margin-top: 8px;
 }
 
 .photo-ring {
   position: absolute;
   inset: -2px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #6366F1, #A855F7);
   z-index: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.photo-ring::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #6366F1 60deg,
+    #A855F7 120deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  animation: rotate-border 3s linear infinite;
+  z-index: 0;
+}
+
+.photo-ring::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 18px;
+  background: #080810;
+  z-index: 1;
 }
 
 .photo-inner {
@@ -117,7 +145,7 @@ body {
   border-radius: 18px;
   overflow: hidden;
   background: #0F1120;
-  z-index: 1;
+  z-index: 2;
 }
 
 .photo-inner img {
@@ -125,6 +153,11 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .social-sidebar {
