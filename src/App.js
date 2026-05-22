@@ -127,6 +127,15 @@ function App() {
     { flag: 'https://flagcdn.com/w40/us.png', country: 'Texas', label: '2021', desc: 'First steps in America.' },
     { flag: 'https://flagcdn.com/w40/us.png', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
   ];
+
+  const experience = [
+    { role: 'Co-Founder', company: 'Codyza', period: '2024 — Present', desc: 'Building a web development agency delivering custom websites and digital solutions.', side: 'left' },
+    { role: 'Founder', company: 'Rastahh Clothing Brand', period: '2024 — 2025', desc: 'Founded and managed a startup clothing brand from branding to customer engagement.', side: 'right' },
+    { role: 'Investment Banking Analyst', company: 'Laxmi Sunrise Bank', period: '2022 — 2023', desc: 'Equity analysis and investment reports for senior analysts in Kathmandu.', side: 'left' },
+    { role: 'B.S. Computer Science', company: 'Southwest Minnesota State University', period: 'Expected May 2027', desc: 'GPA: 3.7. OOP (A), Computer Architecture (A), Data Science (A-).', side: 'right' },
+    { role: 'Cambridge A Levels', company: 'Chelsea International Academy', period: '2018 — 2020', desc: 'Cambridge International Curriculum. Leadership and production work recognized in school activities.', side: 'left' },
+  ];
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormSent(true);
@@ -243,8 +252,8 @@ function App() {
                 {journey.map((item) => (
                   <div key={item.country} className="bg-[#0F1120] rounded-2xl p-5 transition flex items-center gap-5 border border-white/5 hover:border-[#6366F1]/40" style={{ borderLeft: '3px solid #6366F1' }}>
                     <div className="country-badge">
-  <img src={item.flag} alt={item.country} style={{ width: '28px', height: 'auto', borderRadius: '3px' }} />
-</div>
+                      <img src={item.flag} alt={item.country} style={{ width: '28px', height: 'auto', borderRadius: '3px' }} />
+                    </div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center">
                         <span className="font-bold text-white">{item.country}</span>
@@ -330,17 +339,19 @@ function App() {
               Experience &<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Education.</span>
             </motion.h2>
             <div className="relative">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#6366F1]/30 to-transparent" />
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px]" style={{background: 'linear-gradient(to bottom, transparent, #6366F1, #A855F7, #6366F1, transparent)'}} />
               <div className="flex flex-col gap-8">
-                {[
-                  { role: 'Co-Founder', company: 'Codyza', period: '2024 — Present', desc: 'Building a web development agency delivering custom websites and digital solutions.', side: 'left' },
-                  { role: 'Founder', company: 'Rastahh Clothing Brand', period: '2024 — 2025', desc: 'Founded and managed a startup clothing brand from branding to customer engagement.', side: 'right' },
-                  { role: 'Investment Banking Analyst', company: 'Laxmi Sunrise Bank', period: '2022 — 2023', desc: 'Equity analysis and investment reports for senior analysts in Kathmandu.', side: 'left' },
-                  { role: 'B.S. Computer Science', company: 'Southwest Minnesota State University', period: 'Expected May 2027', desc: 'GPA: 3.7. OOP (A), Computer Architecture (A), Data Science (A-).', side: 'right' },
-                  { role: 'Cambridge A Levels', company: 'Chelsea International Academy', period: '2018 — 2020', desc: 'Cambridge International Curriculum. Leadership and production work recognized in school activities.', side: 'left' },
-                ].map((item) => (
-                  <motion.div key={item.role} variants={itemVariants} className={`md:w-5/12 ${item.side === 'right' ? 'md:ml-auto' : ''}`}>
-                    <div className="bg-[#0F1120] border border-white/5 rounded-2xl p-6 hover:border-[#6366F1]/40 transition">
+                {experience.map((item) => (
+                  <motion.div
+                    key={item.role}
+                    initial={{ opacity: 0, x: item.side === 'left' ? -60 : 60, rotate: item.side === 'left' ? -2 : 2 }}
+                    whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
+                    className={`md:w-5/12 relative ${item.side === 'right' ? 'md:ml-auto' : ''}`}
+                  >
+                    <div className="hidden md:block absolute top-6 w-3 h-3 rounded-full bg-[#6366F1] shadow-[0_0_12px_rgba(99,102,241,0.8)]" style={{ [item.side === 'left' ? 'right' : 'left']: '-2.2rem' }} />
+                    <div className="bg-[#0F1120] border border-white/5 rounded-2xl p-6 hover:border-[#6366F1]/40 transition" style={{ borderLeft: item.side === 'left' ? '3px solid #6366F1' : undefined, borderRight: item.side === 'right' ? '3px solid #A855F7' : undefined }}>
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="text-lg font-bold">{item.role}</h3>
                         <span className="text-gray-500 text-xs">{item.period}</span>
