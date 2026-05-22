@@ -39,8 +39,8 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const [cursorRing, setCursorRing] = useState({ x: 0, y: 0 });
+  const [cursor, setCursor] = useState({ x: -500, y: -500 });
+  const [spotlight, setSpotlight] = useState({ x: -500, y: -500 });
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formSent, setFormSent] = useState(false);
 
@@ -67,7 +67,7 @@ function App() {
     };
     const handleMouseMove = (e) => {
       setCursor({ x: e.clientX, y: e.clientY });
-      setTimeout(() => setCursorRing({ x: e.clientX, y: e.clientY }), 80);
+      setTimeout(() => setSpotlight({ x: e.clientX, y: e.clientY }), 40);
     };
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
@@ -129,8 +129,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#080810] text-[#F1F5F9]">
+
+      {/* Spotlight cursor */}
+      <div className="cursor-spotlight" style={{ left: spotlight.x, top: spotlight.y }} />
+
+      {/* Cursor dot */}
       <div className="cursor-dot" style={{ left: cursor.x, top: cursor.y }} />
-      <div className="cursor-ring" style={{ left: cursorRing.x, top: cursorRing.y }} />
+
       <div className="dot-grid" />
       <div className="orb orb-1" />
       <div className="orb orb-2" />
@@ -171,7 +176,6 @@ function App() {
         )}
       </AnimatePresence>
 
-      {/* HERO */}
       <section className="min-h-screen flex items-start px-8 md:px-24 pt-32 pb-8 relative z-10">
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col md:flex-row items-start justify-between w-full gap-12">
           <div className="flex-1">
@@ -218,7 +222,6 @@ function App() {
         </motion.div>
       </section>
 
-      {/* ABOUT */}
       <section id="about" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">01</span>
@@ -238,30 +241,27 @@ function App() {
               </motion.div>
               <motion.div variants={itemVariants} className="flex flex-col gap-4">
                 {[
-  { code: 'NP', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
-  { code: 'US', country: 'Texas', label: '2021', desc: 'First steps in America.' },
-  { code: 'US', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
-].map((item) => (
-  <div key={item.country} className="bg-[#0F1120] rounded-2xl p-5 hover:border-[#6366F1]/40 transition flex items-center gap-5 border border-white/5 hover:shadow-lg hover:shadow-[#6366F1]/5" style={{ borderLeft: '3px solid #6366F1' }}>
-    <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center font-black text-sm text-[#6366F1] bg-[#6366F1]/10 border border-[#6366F1]/20 shadow-[0_0_12px_rgba(99,102,241,0.3)]">
-      {item.code}
-    </div>
-    <div className="flex-1">
-      <div className="flex justify-between items-center">
-        <span className="font-bold text-white">{item.country}</span>
-        <span className="text-[#6366F1] text-xs font-semibold">{item.label}</span>
-      </div>
-      <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
-    </div>
-  </div>
-))}
+                  { code: 'NP', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
+                  { code: 'US', country: 'Texas', label: '2021', desc: 'First steps in America.' },
+                  { code: 'US', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
+                ].map((item) => (
+                  <div key={item.country} className="bg-[#0F1120] rounded-2xl p-5 transition flex items-center gap-5 border border-white/5 hover:border-[#6366F1]/40" style={{ borderLeft: '3px solid #6366F1' }}>
+                    <div className="country-badge">{item.code}</div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center">
+                        <span className="font-bold text-white">{item.country}</span>
+                        <span className="text-[#6366F1] text-xs font-semibold">{item.label}</span>
+                      </div>
+                      <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* SKILLS */}
       <section id="skills" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">02</span>
@@ -289,7 +289,6 @@ function App() {
         </div>
       </section>
 
-      {/* PROJECTS */}
       <section id="projects" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">03</span>
@@ -324,7 +323,6 @@ function App() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
       <section id="experience" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">04</span>
@@ -360,7 +358,6 @@ function App() {
         </div>
       </section>
 
-      {/* ACHIEVEMENTS */}
       <section id="achievements" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">05</span>
@@ -385,7 +382,6 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" className="py-24 px-8 md:px-24 relative z-10">
         <div className="relative">
           <span className="section-number">06</span>
