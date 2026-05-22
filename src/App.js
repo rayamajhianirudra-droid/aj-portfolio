@@ -122,6 +122,12 @@ function App() {
     { icon: '🌍', title: 'Nepal to the USA', org: 'International Journey', desc: 'Built a life and career across continents through discipline.' },
   ];
 
+  const journey = [
+    { flag: '🇳🇵', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
+    { flag: '🇺🇸', country: 'Texas', label: '2021', desc: 'First steps in America.' },
+    { flag: '🇺🇸', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
+  ];
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormSent(true);
@@ -129,13 +135,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#080810] text-[#F1F5F9]">
-
-      {/* Spotlight cursor */}
       <div className="cursor-spotlight" style={{ left: spotlight.x, top: spotlight.y }} />
-
-      {/* Cursor dot */}
       <div className="cursor-dot" style={{ left: cursor.x, top: cursor.y }} />
-
       <div className="dot-grid" />
       <div className="orb orb-1" />
       <div className="orb orb-2" />
@@ -240,13 +241,9 @@ function App() {
                 </p>
               </motion.div>
               <motion.div variants={itemVariants} className="flex flex-col gap-4">
-                {[
-                  { code: 'NP', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
-                  { code: 'US', country: 'Texas', label: '2021', desc: 'First steps in America.' },
-                  { code: 'US', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
-                ].map((item) => (
+                {journey.map((item) => (
                   <div key={item.country} className="bg-[#0F1120] rounded-2xl p-5 transition flex items-center gap-5 border border-white/5 hover:border-[#6366F1]/40" style={{ borderLeft: '3px solid #6366F1' }}>
-                    <div className="country-badge">{item.code}</div>
+                    <div className="country-badge">{item.flag}</div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center">
                         <span className="font-bold text-white">{item.country}</span>
