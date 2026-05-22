@@ -123,11 +123,10 @@ function App() {
   ];
 
   const journey = [
-    { flag: '🇳🇵', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
-    { flag: '🇺🇸', country: 'Texas', label: '2021', desc: 'First steps in America.' },
-    { flag: '🇺🇸', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
+    { flag: 'https://flagcdn.com/w40/np.png', country: 'Nepal', label: 'Origin', desc: 'Where the drive was born.' },
+    { flag: 'https://flagcdn.com/w40/us.png', country: 'Texas', label: '2021', desc: 'First steps in America.' },
+    { flag: 'https://flagcdn.com/w40/us.png', country: 'Minnesota', label: '2024 — Present', desc: 'Building at SMSU and beyond.' },
   ];
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormSent(true);
@@ -243,7 +242,9 @@ function App() {
               <motion.div variants={itemVariants} className="flex flex-col gap-4">
                 {journey.map((item) => (
                   <div key={item.country} className="bg-[#0F1120] rounded-2xl p-5 transition flex items-center gap-5 border border-white/5 hover:border-[#6366F1]/40" style={{ borderLeft: '3px solid #6366F1' }}>
-                    <div className="country-badge">{item.flag}</div>
+                    <div className="country-badge">
+  <img src={item.flag} alt={item.country} style={{ width: '28px', height: 'auto', borderRadius: '3px' }} />
+</div>
                     <div className="flex-1">
                       <div className="flex justify-between items-center">
                         <span className="font-bold text-white">{item.country}</span>
