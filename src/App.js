@@ -79,15 +79,6 @@ function App() {
 
   const navLinks = ['about', 'skills', 'projects', 'experience', 'achievements', 'contact'];
 
-  const skills = [
-    { category: 'Languages', icon: '</>', items: ['Java', 'Python', 'JavaScript', 'SQL'], large: true },
-    { category: 'Frameworks', icon: '⚡', items: ['React', 'Spring Boot', 'Tailwind CSS'], large: false },
-    { category: 'Databases', icon: '🗄', items: ['PostgreSQL', 'MySQL'], large: false },
-    { category: 'AI & APIs', icon: '🤖', items: ['Gemini AI', 'USDA API', 'REST APIs'], large: false },
-    { category: 'Tools', icon: '🛠', items: ['Git', 'GitHub', 'VS Code', 'IntelliJ', 'Vercel'], large: true },
-    { category: 'Human Languages', icon: '🌍', items: ['English', 'Nepali', 'Spanish (basic)'], large: false },
-  ];
-
   const projects = [
     {
       title: 'LifeOS Health',
@@ -277,20 +268,89 @@ function App() {
             <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
               What I<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Work With.</span>
             </motion.h2>
-            <motion.div variants={itemVariants} className="bento-grid">
-              {skills.map((skill) => (
-                <div key={skill.category} className={`bento-card ${skill.large ? 'large' : ''}`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{skill.icon}</span>
-                    <span className="font-bold text-white">{skill.category}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {skill.items.map((item) => (
-                      <span key={item} className="bg-[#1E293B] text-gray-400 px-3 py-1.5 rounded-lg text-sm">{item}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            <motion.div variants={itemVariants}>
+              <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: 'auto' }}>
+                <defs>
+                  <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#6366F1" stopOpacity="0.3"/>
+                    <stop offset="100%" stopColor="#6366F1" stopOpacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="nodeGlow2" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#A855F7" stopOpacity="0.3"/>
+                    <stop offset="100%" stopColor="#A855F7" stopOpacity="0"/>
+                  </radialGradient>
+                </defs>
+                <line x1="400" y1="250" x2="160" y2="100" stroke="#6366F1" strokeWidth="1" strokeOpacity="0.3"/>
+                <line x1="400" y1="250" x2="640" y2="100" stroke="#A855F7" strokeWidth="1" strokeOpacity="0.3"/>
+                <line x1="400" y1="250" x2="100" y2="300" stroke="#6366F1" strokeWidth="1" strokeOpacity="0.3"/>
+                <line x1="400" y1="250" x2="700" y2="300" stroke="#A855F7" strokeWidth="1" strokeOpacity="0.3"/>
+                <line x1="400" y1="250" x2="220" y2="430" stroke="#6366F1" strokeWidth="1" strokeOpacity="0.3"/>
+                <line x1="400" y1="250" x2="580" y2="430" stroke="#A855F7" strokeWidth="1" strokeOpacity="0.3"/>
+                <line x1="160" y1="100" x2="80" y2="40" stroke="#6366F1" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="160" y1="100" x2="120" y2="170" stroke="#6366F1" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="160" y1="100" x2="220" y2="50" stroke="#6366F1" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="640" y1="100" x2="700" y2="40" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="640" y1="100" x2="680" y2="170" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="640" y1="100" x2="580" y2="50" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="100" y1="300" x2="40" y2="260" stroke="#6366F1" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="100" y1="300" x2="50" y2="350" stroke="#6366F1" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="700" y1="300" x2="760" y2="260" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="700" y1="300" x2="750" y2="350" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="580" y1="430" x2="640" y2="470" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <line x1="580" y1="430" x2="620" y2="390" stroke="#A855F7" strokeWidth="0.5" strokeOpacity="0.2"/>
+                <circle cx="400" cy="250" r="40" fill="url(#nodeGlow)"/>
+                <circle cx="400" cy="250" r="18" fill="#0F1120" stroke="#6366F1" strokeWidth="1.5"/>
+                <text x="400" y="246" textAnchor="middle" fontSize="9" fill="#A5B4FC" fontWeight="700">AJ</text>
+                <text x="400" y="258" textAnchor="middle" fontSize="7" fill="#6366F1">SKILLS</text>
+                <circle cx="160" cy="100" r="30" fill="url(#nodeGlow)"/>
+                <circle cx="160" cy="100" r="14" fill="#0F1120" stroke="#6366F1" strokeWidth="1.5"/>
+                <text x="160" y="104" textAnchor="middle" fontSize="8" fill="#A5B4FC" fontWeight="700">LANG</text>
+                <text x="160" y="125" textAnchor="middle" fontSize="9" fill="#94A3B8">Languages</text>
+                <circle cx="640" cy="100" r="30" fill="url(#nodeGlow2)"/>
+                <circle cx="640" cy="100" r="14" fill="#0F1120" stroke="#A855F7" strokeWidth="1.5"/>
+                <text x="640" y="104" textAnchor="middle" fontSize="8" fill="#C4B5FD" fontWeight="700">FW</text>
+                <text x="640" y="125" textAnchor="middle" fontSize="9" fill="#94A3B8">Frameworks</text>
+                <circle cx="100" cy="300" r="30" fill="url(#nodeGlow)"/>
+                <circle cx="100" cy="300" r="14" fill="#0F1120" stroke="#6366F1" strokeWidth="1.5"/>
+                <text x="100" y="304" textAnchor="middle" fontSize="8" fill="#A5B4FC" fontWeight="700">DB</text>
+                <text x="100" y="325" textAnchor="middle" fontSize="9" fill="#94A3B8">Databases</text>
+                <circle cx="700" cy="300" r="30" fill="url(#nodeGlow2)"/>
+                <circle cx="700" cy="300" r="14" fill="#0F1120" stroke="#A855F7" strokeWidth="1.5"/>
+                <text x="700" y="304" textAnchor="middle" fontSize="8" fill="#C4B5FD" fontWeight="700">AI</text>
+                <text x="700" y="325" textAnchor="middle" fontSize="9" fill="#94A3B8">AI & APIs</text>
+                <circle cx="220" cy="430" r="30" fill="url(#nodeGlow)"/>
+                <circle cx="220" cy="430" r="14" fill="#0F1120" stroke="#6366F1" strokeWidth="1.5"/>
+                <text x="220" y="434" textAnchor="middle" fontSize="8" fill="#A5B4FC" fontWeight="700">TOOLS</text>
+                <text x="220" y="455" textAnchor="middle" fontSize="9" fill="#94A3B8">Tools</text>
+                <circle cx="580" cy="430" r="30" fill="url(#nodeGlow2)"/>
+                <circle cx="580" cy="430" r="14" fill="#0F1120" stroke="#A855F7" strokeWidth="1.5"/>
+                <text x="580" y="434" textAnchor="middle" fontSize="8" fill="#C4B5FD" fontWeight="700">LANG</text>
+                <text x="580" y="455" textAnchor="middle" fontSize="9" fill="#94A3B8">Human Lang</text>
+                <circle cx="80" cy="40" r="6" fill="#6366F1" fillOpacity="0.7"/>
+                <text x="80" y="32" textAnchor="middle" fontSize="8" fill="#94A3B8">Java</text>
+                <circle cx="220" cy="50" r="6" fill="#6366F1" fillOpacity="0.7"/>
+                <text x="220" y="42" textAnchor="middle" fontSize="8" fill="#94A3B8">Python</text>
+                <circle cx="120" cy="170" r="6" fill="#6366F1" fillOpacity="0.7"/>
+                <text x="100" y="185" textAnchor="middle" fontSize="8" fill="#94A3B8">JavaScript</text>
+                <circle cx="700" cy="40" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="700" y="32" textAnchor="middle" fontSize="8" fill="#94A3B8">React</text>
+                <circle cx="580" cy="50" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="580" y="42" textAnchor="middle" fontSize="8" fill="#94A3B8">Spring Boot</text>
+                <circle cx="680" cy="170" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="700" y="185" textAnchor="middle" fontSize="8" fill="#94A3B8">Tailwind</text>
+                <circle cx="40" cy="260" r="6" fill="#6366F1" fillOpacity="0.7"/>
+                <text x="40" y="252" textAnchor="middle" fontSize="8" fill="#94A3B8">PostgreSQL</text>
+                <circle cx="50" cy="350" r="6" fill="#6366F1" fillOpacity="0.7"/>
+                <text x="50" y="342" textAnchor="middle" fontSize="8" fill="#94A3B8">MySQL</text>
+                <circle cx="760" cy="260" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="760" y="252" textAnchor="middle" fontSize="8" fill="#94A3B8">Gemini AI</text>
+                <circle cx="750" cy="350" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="755" y="342" textAnchor="middle" fontSize="8" fill="#94A3B8">REST APIs</text>
+                <circle cx="640" cy="470" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="640" y="488" textAnchor="middle" fontSize="8" fill="#94A3B8">Nepali</text>
+                <circle cx="620" cy="390" r="6" fill="#A855F7" fillOpacity="0.7"/>
+                <text x="640" y="388" textAnchor="middle" fontSize="8" fill="#94A3B8">English</text>
+              </svg>
             </motion.div>
           </motion.div>
         </div>
@@ -342,14 +402,7 @@ function App() {
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px]" style={{background: 'linear-gradient(to bottom, transparent, #6366F1, #A855F7, #6366F1, transparent)'}} />
               <div className="flex flex-col gap-8">
                 {experience.map((item) => (
-                  <motion.div
-                    key={item.role}
-                    initial={{ opacity: 0, x: item.side === 'left' ? -60 : 60, rotate: item.side === 'left' ? -2 : 2 }}
-                    whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className={`md:w-5/12 relative ${item.side === 'right' ? 'md:ml-auto' : ''}`}
-                  >
+                  <motion.div key={item.role} initial={{ opacity: 0, x: item.side === 'left' ? -60 : 60, rotate: item.side === 'left' ? -2 : 2 }} whileInView={{ opacity: 1, x: 0, rotate: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: 'easeOut' }} className={`md:w-5/12 relative ${item.side === 'right' ? 'md:ml-auto' : ''}`}>
                     <div className="hidden md:block absolute top-6 w-3 h-3 rounded-full bg-[#6366F1] shadow-[0_0_12px_rgba(99,102,241,0.8)]" style={{ [item.side === 'left' ? 'right' : 'left']: '-2.2rem' }} />
                     <div className="bg-[#0F1120] border border-white/5 rounded-2xl p-6 hover:border-[#6366F1]/40 transition" style={{ borderLeft: item.side === 'left' ? '3px solid #6366F1' : undefined, borderRight: item.side === 'right' ? '3px solid #A855F7' : undefined }}>
                       <div className="flex justify-between items-start mb-2">
