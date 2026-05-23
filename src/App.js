@@ -448,43 +448,27 @@ function App() {
           <span className="section-number">06</span>
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={itemVariants} className="text-[#6366F1] text-sm font-semibold tracking-widest uppercase mb-4">Get In Touch</motion.p>
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black mb-10">
-              Let's Build Something<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Inevitable.</span>
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              <motion.div variants={itemVariants}>
-                <p className="text-gray-400 text-lg leading-relaxed mb-8">Open to internships, collaborations, and conversations with people who build real things. Whether you need a portfolio, a business website, or want to collaborate — reach out.</p>
-                <div className="flex flex-col gap-4">
-                  <a href="mailto:rayamajhi.anirudra@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition">
-                    <span className="w-10 h-10 bg-[#0F1120] border border-white/5 rounded-lg flex items-center justify-center text-[#6366F1] font-bold">@</span>
-                    rayamajhi.anirudra@gmail.com
-                  </a>
-                  <a href="https://linkedin.com/in/anirudra-rayamajhi-bb48b83b4" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-white transition">
-                    <span className="w-10 h-10 bg-[#0F1120] border border-white/5 rounded-lg flex items-center justify-center text-[#6366F1] font-bold">in</span>
-                    LinkedIn
-                  </a>
-                  <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-white transition">
-                    <span className="w-10 h-10 bg-[#0F1120] border border-white/5 rounded-lg flex items-center justify-center"><GithubIcon size={18} color="#6366F1" /></span>
-                    GitHub
-                  </a>
+            <motion.div variants={itemVariants} className="relative rounded-3xl overflow-hidden p-10" style={{ background: '#0A0A14', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div className="aurora-blob aurora-blob-1" />
+                <div className="aurora-blob aurora-blob-2" />
+                <div className="aurora-blob aurora-blob-3" />
+              </div>
+              <div className="relative z-10 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)' }}>
+                  <div className="badge-dot" />
+                  <span className="text-[#4ade80] text-xs font-bold tracking-widest uppercase">Available for opportunities</span>
                 </div>
-              </motion.div>
-              <motion.div variants={itemVariants} className="flex flex-col gap-4">
-                <div className="bg-[#0F1120] rounded-2xl p-6 flex flex-col gap-3" style={{ border: '1px solid rgba(255,255,255,0.05)', borderLeft: '3px solid #4ade80' }}>
-                  <div className="flex items-center gap-2">
-                    <div style={{ width: '8px', height: '8px', background: '#4ade80', borderRadius: '50%', animation: 'pulse-dot 2s infinite', flexShrink: 0 }} />
-                    <span className="text-[#4ade80] text-xs font-bold tracking-widest uppercase">Available for opportunities</span>
-                  </div>
-                  <h3 className="text-white font-black text-lg leading-tight">Let's build something together</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">Open to SWE internships, freelance web projects, and collaborations with people who build real things.</p>
-                  <div className="flex gap-2 flex-wrap">
-                    <span className="text-xs text-gray-500 bg-white/5 border border-white/5 px-3 py-1 rounded-lg">📍 Marshall, MN</span>
-                    <span className="text-xs text-gray-500 bg-white/5 border border-white/5 px-3 py-1 rounded-lg">🌐 Remote friendly</span>
-                    <span className="text-xs text-gray-500 bg-white/5 border border-white/5 px-3 py-1 rounded-lg">⏰ Replies within 24h</span>
-                  </div>
-                </div>
+                <h2 className="text-4xl md:text-5xl font-black mb-4">
+                  Let's Build Something<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7]">Inevitable.</span>
+                </h2>
+                <p className="text-gray-500 text-lg leading-relaxed mb-10">
+                  Open to collaborations, and conversations with people who build real things. Whether you need a portfolio, a business website, or want to collaborate — reach out.
+                </p>
                 <div className="flex flex-col gap-3">
-                  <a href="mailto:rayamajhi.anirudra@gmail.com" className="bg-[#0F1120] border border-white/5 hover:border-[#A855F7]/40 rounded-2xl p-4 flex items-center gap-4 transition group">
+                  <a href="mailto:rayamajhi.anirudra@gmail.com" className="contact-card">
+                    <div className="contact-card-glow contact-card-glow-purple" />
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgba(168,85,247,0.3)' }}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A855F7" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
@@ -492,31 +476,33 @@ function App() {
                       <div className="text-white font-bold text-sm">Email Me</div>
                       <div className="text-gray-500 text-xs">rayamajhi.anirudra@gmail.com</div>
                     </div>
-                    <span className="text-gray-600 group-hover:text-white transition text-lg">↗</span>
+                    <span className="contact-card-arrow">↗</span>
                   </a>
-                  <a href="https://linkedin.com/in/anirudra-rayamajhi-bb48b83b4" target="_blank" rel="noreferrer" className="bg-[#0F1120] border border-white/5 hover:border-[#6366F1]/40 rounded-2xl p-4 flex items-center gap-4 transition group">
+                  <a href="https://linkedin.com/in/anirudra-rayamajhi-bb48b83b4" target="_blank" rel="noreferrer" className="contact-card">
+                    <div className="contact-card-glow contact-card-glow-indigo" />
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)' }}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="#6366F1"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
                     </div>
                     <div className="flex-1">
                       <div className="text-white font-bold text-sm">LinkedIn</div>
-                      <div className="text-gray-500 text-xs">Connect professionally</div>
+                      <div className="text-gray-500 text-xs">Anirudra Rayamajhi</div>
                     </div>
-                    <span className="text-gray-600 group-hover:text-white transition text-lg">↗</span>
+                    <span className="contact-card-arrow">↗</span>
                   </a>
-                  <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="bg-[#0F1120] border border-white/5 hover:border-white/20 rounded-2xl p-4 flex items-center gap-4 transition group">
+                  <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="contact-card">
+                    <div className="contact-card-glow contact-card-glow-white" />
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
                       <GithubIcon size={20} color="white" />
                     </div>
                     <div className="flex-1">
                       <div className="text-white font-bold text-sm">GitHub</div>
-                      <div className="text-gray-500 text-xs">See my code</div>
+                      <div className="text-gray-500 text-xs">rayamajhianirudra-droid</div>
                     </div>
-                    <span className="text-gray-600 group-hover:text-white transition text-lg">↗</span>
+                    <span className="contact-card-arrow">↗</span>
                   </a>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
