@@ -35,14 +35,18 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
 };
 
+const GithubIcon = ({ size = 18, color = '#94A3B8' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+  </svg>
+);
+
 function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const [cursor, setCursor] = useState({ x: -500, y: -500 });
   const [spotlight, setSpotlight] = useState({ x: -500, y: -500 });
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [formSent, setFormSent] = useState(false);
 
   const typedText = useTypingEffect([
     'Full Stack Developer.',
@@ -127,11 +131,6 @@ function App() {
     { role: 'Cambridge A Levels', company: 'Chelsea International Academy', period: '2018 — 2020', desc: 'Cambridge International Curriculum. Leadership and production work recognized in school activities.', side: 'left' },
   ];
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setFormSent(true);
-  };
-
   return (
     <div className="min-h-screen bg-[#080810] text-[#F1F5F9]">
       <div className="cursor-spotlight" style={{ left: spotlight.x, top: spotlight.y }} />
@@ -145,7 +144,7 @@ function App() {
 
       <div className="social-sidebar hidden md:flex">
         <a href="https://linkedin.com/in/anirudra-rayamajhi-bb48b83b4" target="_blank" rel="noreferrer" className="social-link">in</a>
-        <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="social-link">gh</a>
+        <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="social-link"><GithubIcon size={16} color="#94A3B8" /></a>
         <a href="mailto:rayamajhi.anirudra@gmail.com" className="social-link">@</a>
         <a href="https://codyza.com" target="_blank" rel="noreferrer" className="social-link">c</a>
       </div>
@@ -465,26 +464,57 @@ function App() {
                     LinkedIn
                   </a>
                   <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-white transition">
-                    <span className="w-10 h-10 bg-[#0F1120] border border-white/5 rounded-lg flex items-center justify-center text-[#6366F1] font-bold">gh</span>
+                    <span className="w-10 h-10 bg-[#0F1120] border border-white/5 rounded-lg flex items-center justify-center"><GithubIcon size={18} color="#6366F1" /></span>
                     GitHub
                   </a>
                 </div>
               </motion.div>
-              <motion.div variants={itemVariants}>
-                {formSent ? (
-                  <div className="bg-[#0F1120] border border-[#6366F1]/30 rounded-2xl p-8 text-center">
-                    <div className="text-4xl mb-4">✅</div>
-                    <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-gray-400">I will get back to you soon.</p>
+              <motion.div variants={itemVariants} className="flex flex-col gap-4">
+                <div className="bg-[#0F1120] rounded-2xl p-6 flex flex-col gap-3" style={{ border: '1px solid rgba(255,255,255,0.05)', borderLeft: '3px solid #4ade80' }}>
+                  <div className="flex items-center gap-2">
+                    <div style={{ width: '8px', height: '8px', background: '#4ade80', borderRadius: '50%', animation: 'pulse-dot 2s infinite', flexShrink: 0 }} />
+                    <span className="text-[#4ade80] text-xs font-bold tracking-widest uppercase">Available for opportunities</span>
                   </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
-                    <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required className="contact-input" />
-                    <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required className="contact-input" />
-                    <textarea placeholder="Your Message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} required className="contact-input resize-none" />
-                    <button type="submit" className="bg-[#6366F1] hover:bg-[#5558DD] text-white px-8 py-3 rounded-lg font-semibold transition">Send Message</button>
-                  </form>
-                )}
+                  <h3 className="text-white font-black text-lg leading-tight">Let's build something together</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">Open to SWE internships, freelance web projects, and collaborations with people who build real things.</p>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="text-xs text-gray-500 bg-white/5 border border-white/5 px-3 py-1 rounded-lg">📍 Marshall, MN</span>
+                    <span className="text-xs text-gray-500 bg-white/5 border border-white/5 px-3 py-1 rounded-lg">🌐 Remote friendly</span>
+                    <span className="text-xs text-gray-500 bg-white/5 border border-white/5 px-3 py-1 rounded-lg">⏰ Replies within 24h</span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <a href="mailto:rayamajhi.anirudra@gmail.com" className="bg-[#0F1120] border border-white/5 hover:border-[#A855F7]/40 rounded-2xl p-4 flex items-center gap-4 transition group">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgba(168,85,247,0.3)' }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A855F7" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-white font-bold text-sm">Email Me</div>
+                      <div className="text-gray-500 text-xs">rayamajhi.anirudra@gmail.com</div>
+                    </div>
+                    <span className="text-gray-600 group-hover:text-white transition text-lg">↗</span>
+                  </a>
+                  <a href="https://linkedin.com/in/anirudra-rayamajhi-bb48b83b4" target="_blank" rel="noreferrer" className="bg-[#0F1120] border border-white/5 hover:border-[#6366F1]/40 rounded-2xl p-4 flex items-center gap-4 transition group">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)' }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="#6366F1"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-white font-bold text-sm">LinkedIn</div>
+                      <div className="text-gray-500 text-xs">Connect professionally</div>
+                    </div>
+                    <span className="text-gray-600 group-hover:text-white transition text-lg">↗</span>
+                  </a>
+                  <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" className="bg-[#0F1120] border border-white/5 hover:border-white/20 rounded-2xl p-4 flex items-center gap-4 transition group">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <GithubIcon size={20} color="white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-white font-bold text-sm">GitHub</div>
+                      <div className="text-gray-500 text-xs">See my code</div>
+                    </div>
+                    <span className="text-gray-600 group-hover:text-white transition text-lg">↗</span>
+                  </a>
+                </div>
               </motion.div>
             </div>
           </motion.div>
