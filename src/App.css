@@ -9,8 +9,8 @@
 }
 
 body {
-  background-color: #080810;
-  color: #F1F5F9;
+  background-color: #FAFAFB;
+  color: #1E293B;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   cursor: none;
@@ -23,7 +23,7 @@ body {
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, rgba(168,85,247,0.03) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(30,64,175,0.05) 0%, rgba(30,58,138,0.025) 40%, transparent 70%);
   transition: left 0.05s ease, top 0.05s ease;
   border-radius: 50%;
 }
@@ -31,20 +31,20 @@ body {
 .cursor-dot {
   width: 6px;
   height: 6px;
-  background: #6366F1;
+  background: #1E40AF;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 8px rgba(99,102,241,0.8);
+  box-shadow: 0 0 8px rgba(30,64,175,0.8);
 }
 
 .orb {
   position: fixed;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.12;
+  opacity: 0.07;
   pointer-events: none;
   z-index: 0;
   animation: float 8s ease-in-out infinite;
@@ -53,7 +53,7 @@ body {
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, #6366F1, transparent);
+  background: radial-gradient(circle, #1E40AF, transparent);
   top: -200px;
   left: -200px;
   animation-duration: 10s;
@@ -62,7 +62,7 @@ body {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #A855F7, transparent);
+  background: radial-gradient(circle, #1e3a8a, transparent);
   bottom: 10%;
   right: -150px;
   animation-duration: 13s;
@@ -72,7 +72,7 @@ body {
 .orb-3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #6366F1, transparent);
+  background: radial-gradient(circle, #1E40AF, transparent);
   top: 50%;
   left: 40%;
   animation-duration: 15s;
@@ -92,7 +92,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle, rgba(99,102,241,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(30,64,175,0.06) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
   z-index: 0;
@@ -122,8 +122,8 @@ body {
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    #6366F1 60deg,
-    #A855F7 120deg,
+    #1E40AF 60deg,
+    #1e3a8a 120deg,
     transparent 180deg,
     transparent 360deg
   );
@@ -136,7 +136,7 @@ body {
   position: absolute;
   inset: 2px;
   border-radius: 18px;
-  background: #080810;
+  background: #FAFAFB;
   z-index: 1;
 }
 
@@ -145,7 +145,7 @@ body {
   inset: 2px;
   border-radius: 18px;
   overflow: hidden;
-  background: #0F1120;
+  background: #F1F5F4;
   z-index: 2;
 }
 
@@ -175,23 +175,24 @@ body {
 .social-link {
   width: 40px;
   height: 40px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #94A3B8;
+  color: #64748B;
   text-decoration: none;
   transition: all 0.2s ease;
   font-size: 14px;
   font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .social-link:hover {
-  background: rgba(99,102,241,0.15);
-  border-color: rgba(99,102,241,0.4);
-  color: #6366F1;
+  background: rgba(30,64,175,0.08);
+  border-color: rgba(30,64,175,0.35);
+  color: #1E40AF;
   transform: translateX(4px);
 }
 
@@ -202,7 +203,7 @@ body {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(99,102,241,0.3);
+  color: rgba(30,64,175,0.35);
 }
 
 .bento-grid {
@@ -212,19 +213,20 @@ body {
 }
 
 .bento-card {
-  background: #0F1120;
-  border: 1px solid rgba(255,255,255,0.05);
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 20px;
   padding: 24px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
 }
 
 .bento-card:hover {
-  border-color: rgba(99,102,241,0.3);
+  border-color: rgba(30,64,175,0.25);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(99,102,241,0.1);
+  box-shadow: 0 20px 40px rgba(30,64,175,0.08);
 }
 
 .bento-card.large {
@@ -238,7 +240,7 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(30,64,175,0.4), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -257,29 +259,37 @@ body {
   overflow: hidden;
 }
 
+.project-preview-foresight {
+  background: linear-gradient(135deg, #1e3a8a, #dbeafe);
+}
+
 .project-preview-lifeos {
-  background: linear-gradient(135deg, #064e3b, #0F1120);
+  background: linear-gradient(135deg, #1e3a8a, #eff6ff);
+}
+
+.project-preview-nepal {
+  background: linear-gradient(135deg, #1e3a8a, #dbeafe);
 }
 
 .project-preview-tax {
-  background: linear-gradient(135deg, #1e3a5f, #0F1120);
+  background: linear-gradient(135deg, #1e3a5f, #eff6ff);
 }
 
 .project-preview-codyza {
-  background: linear-gradient(135deg, #3b0764, #0F1120);
+  background: linear-gradient(135deg, #3b0764, #faf5ff);
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(99,102,241,0.1);
-  border: 1px solid rgba(99,102,241,0.2);
+  background: rgba(30,64,175,0.08);
+  border: 1px solid rgba(30,64,175,0.2);
   border-radius: 100px;
   padding: 6px 14px;
   font-size: 12px;
   font-weight: 600;
-  color: #A5B4FC;
+  color: #1e3a8a;
   letter-spacing: 0.05em;
   margin-bottom: 24px;
 }
@@ -307,25 +317,25 @@ body {
   justify-content: center;
   font-weight: 900;
   font-size: 22px;
-  color: #6366F1;
-  background: rgba(99,102,241,0.1);
-  border: 1px solid rgba(99,102,241,0.3);
-  box-shadow: 0 0 16px rgba(99,102,241,0.5), 0 0 32px rgba(99,102,241,0.2), inset 0 0 12px rgba(99,102,241,0.1);
+  color: #1E40AF;
+  background: rgba(30,64,175,0.08);
+  border: 1px solid rgba(30,64,175,0.25);
+  box-shadow: 0 0 16px rgba(30,64,175,0.35), 0 0 32px rgba(30,64,175,0.12), inset 0 0 12px rgba(30,64,175,0.06);
   animation: badge-pulse 3s ease-in-out infinite;
 }
 
 @keyframes badge-pulse {
-  0%, 100% { box-shadow: 0 0 16px rgba(99,102,241,0.5), 0 0 32px rgba(99,102,241,0.2), inset 0 0 12px rgba(99,102,241,0.1); }
-  50% { box-shadow: 0 0 24px rgba(99,102,241,0.8), 0 0 48px rgba(99,102,241,0.4), inset 0 0 16px rgba(99,102,241,0.2); }
+  0%, 100% { box-shadow: 0 0 16px rgba(30,64,175,0.35), 0 0 32px rgba(30,64,175,0.12), inset 0 0 12px rgba(30,64,175,0.06); }
+  50% { box-shadow: 0 0 24px rgba(30,64,175,0.55), 0 0 48px rgba(30,64,175,0.25), inset 0 0 16px rgba(30,64,175,0.12); }
 }
 
 .contact-input {
   width: 100%;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 12px;
   padding: 14px 18px;
-  color: #F1F5F9;
+  color: #1E293B;
   font-size: 15px;
   outline: none;
   transition: all 0.2s ease;
@@ -333,12 +343,12 @@ body {
 }
 
 .contact-input:focus {
-  border-color: rgba(99,102,241,0.5);
-  background: rgba(99,102,241,0.05);
+  border-color: rgba(30,64,175,0.5);
+  background: rgba(30,64,175,0.03);
 }
 
 .contact-input::placeholder {
-  color: #475569;
+  color: #94A3B8;
 }
 
 .scroll-indicator {
@@ -346,7 +356,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: #475569;
+  color: #94A3B8;
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -355,7 +365,7 @@ body {
 .scroll-line {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, #6366F1, transparent);
+  background: linear-gradient(to bottom, #1E40AF, transparent);
   animation: scroll-anim 1.5s ease-in-out infinite;
 }
 
@@ -364,79 +374,33 @@ body {
   50% { transform: scaleY(1); transform-origin: top; }
   51% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
-}.aurora-blob {
+}
+
+.aurora-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
+  filter: blur(60px);
   pointer-events: none;
+  opacity: 0.15;
 }
-.aurora-blob-1 {
-  width: 500px; height: 250px;
-  background: #6366F1;
-  opacity: 0.1;
-  top: -80px; left: -100px;
-  animation: aurora1 9s ease-in-out infinite alternate;
-}
-.aurora-blob-2 {
-  width: 400px; height: 200px;
-  background: #A855F7;
-  opacity: 0.1;
-  top: 0px; right: -80px;
-  animation: aurora2 11s ease-in-out infinite alternate;
-}
-.aurora-blob-3 {
-  width: 350px; height: 180px;
-  background: #6366F1;
-  opacity: 0.06;
-  bottom: -40px; left: 30%;
-  animation: aurora3 13s ease-in-out infinite alternate;
-}
-@keyframes aurora1 {
-  0% { transform: translateX(0px) translateY(0px) scaleX(1); }
-  100% { transform: translateX(80px) translateY(30px) scaleX(1.3); }
-}
-@keyframes aurora2 {
-  0% { transform: translateX(0px) translateY(0px) scaleY(1); }
-  100% { transform: translateX(-60px) translateY(40px) scaleY(1.4); }
-}
-@keyframes aurora3 {
-  0% { transform: translateX(0px) scaleX(1); }
-  100% { transform: translateX(-100px) scaleX(1.5); }
-}
+
 .contact-card {
-  background: rgba(15,17,32,0.8);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.07);
   border-radius: 16px;
-  padding: 14px 18px;
+  padding: 20px 24px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  text-decoration: none;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  position: relative;
-  overflow: hidden;
+  gap: 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
 }
-.contact-card:hover { transform: translateY(-3px); }
-.contact-card-glow {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  border-radius: 16px;
-}
-.contact-card:hover .contact-card-glow { opacity: 1; }
-.contact-card-glow-purple { background: radial-gradient(ellipse at left center, rgba(168,85,247,0.08), transparent 70%); }
-.contact-card-glow-indigo { background: radial-gradient(ellipse at left center, rgba(99,102,241,0.08), transparent 70%); }
-.contact-card-glow-white { background: radial-gradient(ellipse at left center, rgba(255,255,255,0.04), transparent 70%); }
-.contact-card-arrow {
-  color: #334155;
-  font-size: 18px;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.contact-card:hover .contact-card-arrow {
-  color: #94A3B8;
-  transform: translateX(3px) translateY(-3px);
+
+.contact-card:hover {
+  border-color: rgba(30,64,175,0.3);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 24px rgba(30,64,175,0.08);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
