@@ -13,7 +13,7 @@ body {
   color: #1E293B;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
 }
 
 .cursor-spotlight {
@@ -409,7 +409,6 @@ body {
   .bento-card.large { grid-column: span 1; }
   .photo-wrapper { width: 200px; height: 240px; }
   .section-number { display: none; }
-  body { cursor: auto; }
   .cursor-dot { display: none; }
   .cursor-spotlight { display: none; }
 }

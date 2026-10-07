@@ -316,7 +316,7 @@ export default function App() {
       </div>
 
       {/* ── HERO ── */}
-      <section className="pt-20 pb-12 px-5 md:px-16 lg:px-24 min-h-screen flex items-center">
+      <section className="pt-24 pb-12 px-5 md:px-16 lg:px-24 flex items-center">
         <motion.div
           className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-8 md:gap-12"
           variants={containerVariants}
@@ -425,7 +425,7 @@ export default function App() {
       </section>
 
       {/* ── SKILLS ── */}
-      <section id="skills" className="py-16 md:py-24 px-5 md:px-16 lg:px-24">
+      <section id="skills" className="py-12 md:py-16 px-5 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
