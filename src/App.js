@@ -74,122 +74,117 @@ function ExternalIcon({ size = 15 }) {
 /* ─── Data ───────────────────────────────────────────────────────────────── */
 const projects = [
   {
-    title: 'Foresight',
-    badge: '🏆 3rd Place — SW MN Hacks 2026',
-    desc: 'AI workforce readiness platform built at Google Cloud Hackathon. Owned full backend: FastAPI, Supabase, Gemini AI integration, and risk-scoring logic.',
-    tags: ['Python', 'FastAPI', 'Supabase', 'Gemini AI', 'Vercel'],
-    link: 'https://skillspulse-backend.vercel.app',
-  },
-  {
     title: 'LifeOS Health',
     badge: 'Live · lifeoshealth.com',
-    desc: 'Full-stack nutrition platform with Spring Boot REST API, React frontend, PostgreSQL, and USDA FoodData (600K+ foods). Gemini AI meal analysis in production.',
-    tags: ['Spring Boot', 'React', 'PostgreSQL', 'Gemini AI', 'Railway'],
+    desc: 'Full-stack nutrition platform. Spring Boot REST API on Railway, React frontend on Vercel, PostgreSQL with JPA/Hibernate. JWT auth with BCrypt, USDA FoodData integration (600K+ foods), BMR/TDEE calorie targets, and async processing that cut AI API calls ~80%.',
+    tags: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Railway', 'Vercel'],
     link: 'https://lifeoshealth.com',
+    github: 'https://github.com/rayamajhianirudra-droid',
+  },
+  {
+    title: 'Foresight',
+    badge: '🏆 3rd of 12 Teams — SW MN Hacks 2026',
+    desc: 'AI workforce readiness platform for the Google Cloud Hackathon. Owned the full backend: FastAPI, Supabase, deterministic risk engine, CSV/Excel import, and Gemini AI human-in-the-loop reviews with retry/failover.',
+    tags: ['Python', 'FastAPI', 'Supabase', 'Gemini AI', 'Vercel'],
+    link: 'https://skillspulse-backend.vercel.app',
+    github: null,
+  },
+  {
+    title: 'KnowYourFinance',
+    badge: 'In Progress · Team of 4',
+    desc: 'Privacy-first budgeting app that parses uploaded bank statements (CSV/PDF) into categorized transactions with custom date-range income-vs-expense reports. Built following a waterfall SDLC for COMP 425 Software Engineering.',
+    tags: ['Software Engineering', 'Waterfall SDLC', 'COMP 425'],
+    link: null,
+    github: null,
   },
   {
     title: 'NepalDisaster.com',
     badge: 'Live · nepaldisaster.com',
-    desc: 'Bilingual emergency platform for the 2026 Nepal floods. Real-time district alert map, missing-persons registry with photo uploads.',
-    tags: ['React', 'Open-Meteo API', 'Vercel'],
+    desc: 'Bilingual (English/Nepali) civic emergency site for the 2026 Nepal floods. Auto-updating district alert map, 5-day forecasts, searchable missing-persons registry with photo uploads, and rescue registry backed by official figures.',
+    tags: ['React', 'Open-Meteo API', 'DHM/NDRRMA', 'Vercel'],
     link: 'https://nepaldisaster.com',
-  },
-  {
-    title: 'US Tax Calculator',
-    badge: 'Desktop App · Java',
-    desc: 'JavaFX desktop app for federal and state tax calculation with real-time bracket computation and deduction analysis.',
-    tags: ['Java', 'JavaFX', 'OOP'],
-    link: 'https://github.com/rayamajhianirudra-droid',
-  },
-  {
-    title: 'Codyza',
-    badge: 'Co-Founder · SMSU',
-    desc: 'Student developer organization at SMSU. Co-founded, President. Built and launched NepalDisaster.com. Recognized by SMSU Student Senate.',
-    tags: ['Leadership', 'React', 'Vercel'],
-    link: 'https://codyza.com',
+    github: null,
   },
 ];
 
 const skills = [
   {
-    category: 'Backend',
+    category: 'Languages',
+    icon: '{ }',
+    items: ['Java', 'Python', 'JavaScript', 'SQL', 'C++', 'HTML', 'CSS'],
+  },
+  {
+    category: 'Frameworks',
     icon: '⚙️',
-    items: ['Java', 'Spring Boot', 'Python', 'FastAPI', 'REST APIs', 'JPA / Hibernate'],
+    items: ['Spring Boot', 'Spring Security', 'JPA / Hibernate', 'React', 'FastAPI', 'JavaFX'],
   },
   {
-    category: 'Frontend',
-    icon: '🖥️',
-    items: ['React', 'JavaScript', 'HTML / CSS', 'Tailwind CSS', 'Responsive Design'],
-  },
-  {
-    category: 'Database & Cloud',
+    category: 'Databases & Cloud',
     icon: '🗄️',
-    items: ['PostgreSQL', 'Supabase', 'MySQL', 'Vercel', 'Railway', 'AWS (basics)'],
+    items: ['PostgreSQL', 'Supabase', 'Vercel', 'Railway'],
   },
   {
-    category: 'AI & Tools',
-    icon: '🤖',
-    items: ['Gemini AI', 'Google Cloud', 'Git', 'Maven', 'IntelliJ IDEA', 'VS Code'],
+    category: 'APIs & Tools',
+    icon: '🔧',
+    items: ['REST APIs', 'JWT', 'BCrypt', 'Gemini API', 'Git / GitHub', 'Maven', 'IntelliJ IDEA', 'VS Code'],
   },
 ];
 
 const experience = [
   {
-    role: 'Co-Founder & President',
-    company: 'Codyza · SMSU',
+    role: 'President',
+    company: 'Codyza Club · Southwest Minnesota State University',
     period: '2026 – Present',
-    desc: 'Founded and lead student developer organization. Built NepalDisaster.com with the team. Recognized by SMSU Student Senate.',
+    desc: 'Founded and lead a student technology club open to all majors. Authored the club constitution, presented to the SMSU Student Senate and faculty, and secured official approval. Guides teams building websites and real-world software; runs coding, AI workshops, hackathon prep, and career events.',
+    type: 'experience',
   },
   {
-    role: 'DAT Duty Officer',
+    role: 'DAT Duty Officer & Sheltering Associate',
     company: 'American Red Cross, MN & Dakotas',
     period: '2026 – Present',
-    desc: 'On-call disaster responder coordinating shelter, financial assistance, and damage assessment.',
-  },
-  {
-    role: 'Direct Support Professional II',
-    company: 'Sevita / Genesis Crisis Home',
-    period: '2024 – Present',
-    desc: 'Promoted from DSP to DSP II. Daily care coordination, medication management, and crisis de-escalation.',
+    desc: 'On-call disaster responder coordinating shelter, financial assistance, and damage assessment for families affected by disasters.',
+    type: 'experience',
   },
   {
     role: 'Investment Banking Analyst',
     company: 'Laxmi Sunrise Bank · Kathmandu, Nepal',
     period: '2022 – 2023',
-    desc: 'Equity analysis and investment reports for senior analysts.',
+    desc: 'Produced equity analysis and investment reports for senior analysts.',
+    type: 'experience',
   },
   {
     role: 'B.S. Computer Science',
-    company: 'Southwest Minnesota State University',
+    company: 'Southwest Minnesota State University, Marshall MN',
     period: 'Expected May 2027',
-    desc: 'GPA 3.7 (CS Core). Minor: Data Science. OOP (A), Computer Architecture (A), Data Science (A-).',
+    desc: 'CS GPA: 3.7/4.00 · Minor: Data Science · Relevant: OOP, Computer Architecture, Software Engineering, Computer Networking, Data Science, Advanced UNIX Programming',
+    type: 'education',
   },
 ];
 
 const achievements = [
   {
     icon: '🏆',
-    title: '3rd Place — SW MN Hacks 2026',
-    org: 'Google Cloud Hackathon · 12 Teams',
-    desc: 'Built Foresight with a team of 4. Owned the entire backend and database layer.',
-  },
-  {
-    icon: '🏦',
-    title: 'Investment Banking Analyst',
-    org: 'Laxmi Sunrise Bank',
-    desc: 'Professional financial analysis experience before pursuing CS full-time.',
-  },
-  {
-    icon: '🚨',
-    title: 'DAT Duty Officer',
-    org: 'American Red Cross, MN & Dakotas',
-    desc: 'On-call disaster responder coordinating emergency shelter and assistance.',
+    title: '3rd of 12 Teams — SW MN Hacks 2026',
+    org: 'Google Cloud Rapid Agent Hackathon · 52 Participants',
+    desc: 'Built Foresight (SkillsPulse), an AI workforce readiness platform, with a team of 4. Owned the entire backend, API, and database layer.',
   },
   {
     icon: '🎓',
-    title: '3.7 GPA · CS Core',
+    title: '3.7 CS GPA · Minor in Data Science',
     org: 'Southwest Minnesota State University',
-    desc: 'OOP (A), Computer Architecture (A), Data Science (A-). Minor in Data Science.',
+    desc: 'OOP (A), Computer Architecture (A), Advanced UNIX (in progress). On track for May 2027 graduation.',
+  },
+  {
+    icon: '🏛️',
+    title: 'Founded Codyza Club at SMSU',
+    org: 'Officially approved by SMSU Student Senate · Fall 2026',
+    desc: 'Authored the constitution, presented the proposal, and launched the first student tech organization at SMSU.',
+  },
+  {
+    icon: '🌐',
+    title: '3 Live Deployed Applications',
+    org: 'lifeoshealth.com · nepaldisaster.com · skillspulse-backend.vercel.app',
+    desc: 'Real users, real domains — not just GitHub repos. Each project is independently deployed and maintained.',
   },
 ];
 
@@ -263,7 +258,7 @@ export default function App() {
               </button>
             ))}
             <a
-              href="mailto:rayamajhianirudra@gmail.com"
+              href="mailto:rayamajhi.anirudra@gmail.com"
               className="bg-[#1E40AF] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#1e3a8a] transition"
             >
               Hire Me
@@ -313,7 +308,7 @@ export default function App() {
                 </button>
               ))}
               <a
-                href="mailto:rayamajhianirudra@gmail.com"
+                href="mailto:rayamajhi.anirudra@gmail.com"
                 className="mt-2 block text-center bg-[#1E40AF] text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1e3a8a] transition"
               >
                 Hire Me
@@ -328,10 +323,10 @@ export default function App() {
         <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1">
           <GithubIcon size={17} />
         </a>
-        <a href="https://linkedin.com/in/ajrayamajhi" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1">
+        <a href="https://linkedin.com/in/anirudra-rayamajhi" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1">
           <LinkedInIcon size={17} />
         </a>
-        <a href="mailto:rayamajhianirudra@gmail.com" aria-label="Email" className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1">
+        <a href="mailto:rayamajhi.anirudra@gmail.com" aria-label="Email" className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1">
           <EmailIcon size={17} />
         </a>
         <div className="w-px h-14 bg-[#CBD5E1] mt-1" />
@@ -373,7 +368,7 @@ export default function App() {
 
             {/* Subtext */}
             <motion.p variants={itemVariants} className="text-[#64748B] max-w-md mb-5 leading-relaxed text-sm md:text-base">
-              CS Junior at SMSU — building AI-powered full-stack apps with Spring Boot, React, and PostgreSQL. 3 live products, 1 hackathon win.
+              CS student at SMSU (GPA 3.7, May 2027). Full-stack developer with three live web apps and a 3rd-place hackathon finish. Java, Spring Boot, React, PostgreSQL, and Gemini AI — in production.
             </motion.p>
 
             {/* Tech pills */}
@@ -502,15 +497,18 @@ export default function App() {
                       <h3 className="font-bold text-[#0F172A] text-base leading-snug">{p.title}</h3>
                       <p className="text-xs text-[#1E40AF] font-semibold mt-0.5">{p.badge}</p>
                     </div>
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Open ${p.title}`}
-                      className="text-[#94A3B8] hover:text-[#1E40AF] transition flex-shrink-0 p-1 -m-1"
-                    >
-                      <ExternalIcon />
-                    </a>
+                    <div className="flex items-center gap-1 flex-shrink-0">
+                      {p.github && (
+                        <a href={p.github} target="_blank" rel="noreferrer" aria-label={`${p.title} on GitHub`} className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1 -m-1">
+                          <GithubIcon size={15} />
+                        </a>
+                      )}
+                      {p.link && (
+                        <a href={p.link} target="_blank" rel="noreferrer" aria-label={`Open ${p.title}`} className="text-[#94A3B8] hover:text-[#1E40AF] transition p-1 -m-1">
+                          <ExternalIcon />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   <p className="text-sm text-[#64748B] leading-relaxed mb-4 flex-1">{p.desc}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto">
@@ -541,13 +539,18 @@ export default function App() {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="bg-white border border-slate-100 rounded-xl p-4 md:p-5 shadow-sm hover:border-[#1E40AF]/25 hover:shadow-md transition border-l-4 border-l-[#1E40AF]"
+                  className={`bg-white border border-slate-100 rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md transition border-l-4 ${exp.type === 'education' ? 'border-l-[#6366F1] hover:border-[#6366F1]/25' : 'border-l-[#1E40AF] hover:border-[#1E40AF]/25'}`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-                    <h3 className="font-bold text-[#0F172A] text-sm md:text-base">{exp.role}</h3>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <h3 className="font-bold text-[#0F172A] text-sm md:text-base">{exp.role}</h3>
+                      {exp.type === 'education' && (
+                        <span className="text-xs bg-[#EEF2FF] text-[#6366F1] font-semibold px-2 py-0.5 rounded flex-shrink-0">Education</span>
+                      )}
+                    </div>
                     <span className="text-xs text-[#94A3B8] font-medium flex-shrink-0">{exp.period}</span>
                   </div>
-                  <p className="text-xs font-semibold text-[#1E40AF] mb-1.5">{exp.company}</p>
+                  <p className={`text-xs font-semibold mb-1.5 ${exp.type === 'education' ? 'text-[#6366F1]' : 'text-[#1E40AF]'}`}>{exp.company}</p>
                   <p className="text-sm text-[#64748B] leading-relaxed">{exp.desc}</p>
                 </motion.div>
               ))}
@@ -597,16 +600,16 @@ export default function App() {
               {/* Bio */}
               <motion.div variants={itemVariants}>
                 <p className="text-[#475569] leading-relaxed text-sm md:text-base mb-5">
-                  CS Junior at SMSU (3.7 GPA, May 2027). I build and ship full-stack products end-to-end — Spring Boot APIs, React frontends, PostgreSQL databases, and Gemini AI integrations, all in production. I have delivered under real pressure: a hackathon win, a live disaster response platform active during the 2026 Nepal floods, and a deployed health app with real users.
+                  CS student at SMSU (3.7 GPA, May 2027) with three live web applications and a 3rd-place finish at the Google Cloud Rapid Agent Hackathon. I build reliable, user-focused software end-to-end — Spring Boot REST APIs, React frontends, PostgreSQL databases, JWT security, and Gemini AI integrations, all deployed and maintained in production. I have shipped under real conditions: a hackathon with 52 participants, a civic emergency platform active during the 2026 Nepal floods, and a health app with USDA's 600,000-food database.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="https://github.com/rayamajhianirudra-droid" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="flex items-center gap-1.5 text-sm font-medium text-[#64748B] hover:text-[#1E40AF] transition">
                     <GithubIcon size={15} /> GitHub
                   </a>
-                  <a href="https://linkedin.com/in/ajrayamajhi" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="flex items-center gap-1.5 text-sm font-medium text-[#64748B] hover:text-[#1E40AF] transition">
+                  <a href="https://linkedin.com/in/anirudra-rayamajhi" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="flex items-center gap-1.5 text-sm font-medium text-[#64748B] hover:text-[#1E40AF] transition">
                     <LinkedInIcon size={15} /> LinkedIn
                   </a>
-                  <a href="mailto:rayamajhianirudra@gmail.com" aria-label="Send email" className="flex items-center gap-1.5 text-sm font-medium text-[#64748B] hover:text-[#1E40AF] transition">
+                  <a href="mailto:rayamajhi.anirudra@gmail.com" aria-label="Send email" className="flex items-center gap-1.5 text-sm font-medium text-[#64748B] hover:text-[#1E40AF] transition">
                     <EmailIcon size={15} /> Email
                   </a>
                 </div>
@@ -666,8 +669,8 @@ export default function App() {
               <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
                 <div className="flex-1 space-y-4 w-full">
                   {[
-                    { icon: <EmailIcon size={17} />, label: 'Email', value: 'rayamajhianirudra@gmail.com', href: 'mailto:rayamajhianirudra@gmail.com' },
-                    { icon: <LinkedInIcon size={17} />, label: 'LinkedIn', value: 'linkedin.com/in/ajrayamajhi', href: 'https://linkedin.com/in/ajrayamajhi' },
+                    { icon: <EmailIcon size={17} />, label: 'Email', value: 'rayamajhi.anirudra@gmail.com', href: 'mailto:rayamajhi.anirudra@gmail.com' },
+                    { icon: <LinkedInIcon size={17} />, label: 'LinkedIn', value: 'linkedin.com/in/anirudra-rayamajhi', href: 'https://linkedin.com/in/anirudra-rayamajhi' },
                     { icon: <GithubIcon size={17} />, label: 'GitHub', value: 'github.com/rayamajhianirudra-droid', href: 'https://github.com/rayamajhianirudra-droid' },
                   ].map((item) => (
                     <a
@@ -693,7 +696,7 @@ export default function App() {
                   <p className="text-sm text-[#1E40AF] font-semibold">Available for</p>
                   <p className="text-sm text-[#1E40AF] font-semibold mb-4">Summer Internships</p>
                   <a
-                    href="mailto:rayamajhianirudra@gmail.com"
+                    href="mailto:rayamajhi.anirudra@gmail.com"
                     className="inline-block bg-[#1E40AF] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#1e3a8a] transition text-sm"
                   >
                     Send a Message →
