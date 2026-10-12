@@ -155,7 +155,7 @@ const experience = [
   {
     role: 'B.S. Computer Science',
     company: 'Southwest Minnesota State University, Marshall MN',
-    period: 'Expected May 2027',
+    period: 'Expected December 2027',
     desc: 'CS GPA: 3.7/4.00 · Minor: Data Science · Relevant: OOP, Computer Architecture, Software Engineering, Computer Networking, Data Science, Advanced UNIX Programming',
     type: 'education',
   },
@@ -172,7 +172,7 @@ const achievements = [
     icon: '🎓',
     title: '3.7 CS GPA · Minor in Data Science',
     org: 'Southwest Minnesota State University',
-    desc: 'OOP (A), Computer Architecture (A), Advanced UNIX (in progress). On track for May 2027 graduation.',
+    desc: 'OOP (A), Computer Architecture (A), Advanced UNIX (in progress). On track for December 2027 graduation.',
   },
   {
     icon: '🏛️',
@@ -193,7 +193,7 @@ const typingWords = [
   'Java · Spring Boot · React.',
   'AI-Powered Apps.',
   '3 Live Deployed Products.',
-  'Available Summer 2027.',
+  'Seeking Summer 2027 Internship.',
 ];
 
 const navLinks = ['skills', 'projects', 'experience', 'achievements', 'about', 'contact'];
@@ -347,7 +347,7 @@ export default function App() {
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#1E40AF] animate-pulse" aria-hidden="true" />
               <span className="text-xs font-bold tracking-widest text-[#1E40AF] uppercase">
-                Full Stack Developer · Open to Internships
+                Full Stack Developer · Seeking Summer 2027 Internship
               </span>
             </motion.div>
 
@@ -368,7 +368,7 @@ export default function App() {
 
             {/* Subtext */}
             <motion.p variants={itemVariants} className="text-[#64748B] max-w-md mb-5 leading-relaxed text-sm md:text-base">
-              CS student at SMSU (GPA 3.7, May 2027). Full-stack developer with three live web apps and a 3rd-place hackathon finish. Java, Spring Boot, React, PostgreSQL, and Gemini AI — in production.
+              CS student at SMSU (GPA 3.7, graduating Dec 2027). Full-stack developer with three live web apps and a 3rd-place hackathon finish. Java, Spring Boot, React, PostgreSQL — in production.
             </motion.p>
 
             {/* Tech pills */}
@@ -662,7 +662,7 @@ export default function App() {
               Let's <span className="text-[#1E40AF]">Connect</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-[#64748B] mb-7 text-sm md:text-base max-w-md">
-              Open to Summer 2027 internships, part-time roles, and interesting projects.
+              Graduating December 2027. Seeking Summer 2027 internships and part-time roles.
             </motion.p>
 
             <motion.div variants={itemVariants} className="bg-white border border-[#BFDBFE] rounded-2xl p-6 md:p-8">
@@ -693,8 +693,8 @@ export default function App() {
 
                 <div className="flex-shrink-0 text-center md:text-left">
                   <div className="text-5xl font-extrabold text-[#1E40AF]/10 leading-none mb-1" aria-hidden="true">2027</div>
-                  <p className="text-sm text-[#1E40AF] font-semibold">Available for</p>
-                  <p className="text-sm text-[#1E40AF] font-semibold mb-4">Summer Internships</p>
+                  <p className="text-sm text-[#1E40AF] font-semibold">Graduating Dec 2027</p>
+                  <p className="text-sm text-[#1E40AF] font-semibold mb-4">Summer 2027 Internships</p>
                   <a
                     href="mailto:rayamajhi.anirudra@gmail.com"
                     className="inline-block bg-[#1E40AF] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#1e3a8a] transition text-sm"
