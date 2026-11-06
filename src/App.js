@@ -423,7 +423,7 @@ export default function App() {
               {/* Resume split button */}
               <div className="flex items-center" role="group" aria-label="Resume options">
                 <a
-                  href="/AJ_Rayamajhi_Resume.pdf"
+                  href="/AJ_Rayamajhi_Resume_v2.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="border border-[#1E40AF]/40 hover:border-[#1E40AF] hover:bg-[#EFF6FF] text-[#1E40AF] px-4 py-2.5 rounded-l-lg font-semibold transition text-sm"
@@ -431,8 +431,8 @@ export default function App() {
                   View Resume ↗
                 </a>
                 <a
-                  href="/AJ_Rayamajhi_Resume.pdf"
-                  download="AJ_Rayamajhi_Resume.pdf"
+                  href="/AJ_Rayamajhi_Resume_v2.pdf"
+                  download="AJ_Rayamajhi_Resume_v2.pdf"
                   aria-label="Download resume PDF"
                   className="border border-[#1E40AF]/40 border-l-[#1E40AF]/20 hover:border-[#1E40AF] hover:bg-[#EFF6FF] text-[#1E40AF] px-3 py-2.5 rounded-r-lg font-semibold transition text-sm"
                   style={{ borderLeftWidth: '1px' }}
