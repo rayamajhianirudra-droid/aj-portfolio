@@ -135,7 +135,28 @@ const experience = [
     role: 'President',
     company: 'Codyza Club · Southwest Minnesota State University',
     period: '2026 – Present',
-    desc: 'Founded and lead a student technology club open to all majors. Authored the club constitution, presented to the SMSU Student Senate and faculty, and secured official approval. Guides teams building websites and real-world software; runs coding, AI workshops, hackathon prep, and career events.',
+    desc: 'Lead a student technology club open to all majors, running coding workshops, team projects, and hackathon prep. Wrote the club constitution and presented it to the SMSU Student Senate and faculty to launch Codyza. Guides teams building websites and real-world software.',
+    type: 'experience',
+  },
+  {
+    role: 'Direct Support Professional II',
+    company: 'Sevita / Genesis Crisis Home · Marshall, MN',
+    period: '2025 – Present',
+    desc: 'Promoted to DSP II; provide daily care, medication support, and crisis de-escalation for individuals with disabilities.',
+    type: 'experience',
+  },
+  {
+    role: 'Ramp Agent',
+    company: 'Swissport',
+    period: '2024 – 2025',
+    desc: 'Loaded and unloaded aircraft baggage and cargo on tight turnaround schedules while following strict safety procedures.',
+    type: 'experience',
+  },
+  {
+    role: 'Warehouse Associate → Safety Associate → Auditor',
+    company: 'Amazon · Dallas–Fort Worth, TX',
+    period: '2022 – 2024',
+    desc: 'Promoted twice across two high-volume fulfillment centers; audited customer returns and associates\' work using RF scanners and Garvis, Amazon\'s audit tool.',
     type: 'experience',
   },
   {
@@ -146,17 +167,10 @@ const experience = [
     type: 'experience',
   },
   {
-    role: 'Investment Banking Analyst',
-    company: 'Laxmi Sunrise Bank · Kathmandu, Nepal',
-    period: '2022 – 2023',
-    desc: 'Produced equity analysis and investment reports for senior analysts.',
-    type: 'experience',
-  },
-  {
     role: 'B.S. Computer Science',
     company: 'Southwest Minnesota State University, Marshall MN',
     period: 'Expected December 2027',
-    desc: 'CS GPA: 3.7/4.00 · Minor: Data Science · Relevant: OOP, Computer Architecture, Software Engineering, Computer Networking, Data Science, Advanced UNIX Programming',
+    desc: 'CS GPA: 3.7/4.00 · Minor: Data Science · Relevant: OOP, Software Engineering, Computer Architecture, Networking, UNIX',
     type: 'education',
   },
 ];
